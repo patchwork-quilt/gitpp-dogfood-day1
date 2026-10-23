@@ -112,9 +112,8 @@ from the implementation's known call shape.
   implementation]. Run total ≈ 44 app REST calls — [derived]. The
   referee's own read calls (check-runs API) are not the app's and are
   not counted.
-- Write-up commit's own Check: TO BE RECORDED — a follow-up commit
-  replaces this line with the check run id posted on the commit that
-  added this file. (Its derived state is the final state above; the
+- Write-up commit's own Check: 120170080462 (neutral) on commit
+  2a9c1d7, the commit that added this file. (Its derived state is the final state above; the
   write-up changes no records.)
 
 ## Surprises

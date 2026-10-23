@@ -1,0 +1,1 @@
+{"id":"task-flag-b","kind":"task","parents":["task-flag-a"],"effects":{"feature.new_checkout":"canary"},"reason":"enable canary"}

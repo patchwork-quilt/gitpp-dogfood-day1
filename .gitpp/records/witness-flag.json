@@ -1,0 +1,1 @@
+{"id":"witness-flag","kind":"witness","parents":["task-flag-b"],"effects":{"feature.new_checkout":"canary"},"reason":"observed canary live"}

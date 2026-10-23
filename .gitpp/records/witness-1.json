@@ -1,0 +1,1 @@
+{"id":"witness-1","kind":"witness","parents":["task-freeze-a","task-oncall-a","task-flag-a"],"effects":{"deploy.last_seen":"green"},"reason":"observer: deploy green at open"}

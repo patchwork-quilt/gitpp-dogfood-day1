@@ -1,0 +1,1 @@
+{"id":"task-freeze-a","kind":"task","parents":["genesis"],"effects":{"release.freeze":"billing-v2 2026-10-19..2026-10-23"},"reason":"launch window declared"}

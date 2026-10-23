@@ -1,0 +1,6 @@
+{
+  "project": "harbor-ops",
+  "format": "git.pp records, one JSON file per record",
+  "host": "github",
+  "note": "M2 live-day test project for gitpp-app: a small teams shared state — release freeze, on-call, feature flags, task claims — written by several agents at once."
+}

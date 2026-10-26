@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+dist/
+*.egg-info/
+
+# Local demo state for `harbor-ops canary` — one person's experiments,
+# never shared state.
+harbor-ops-demo.json

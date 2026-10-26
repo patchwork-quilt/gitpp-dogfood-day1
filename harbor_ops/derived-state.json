@@ -1,0 +1,50 @@
+{
+  "conflicts": [
+    {
+      "key": "feature.new_checkout",
+      "losers": [
+        "task-flag-a",
+        "witness-flag"
+      ],
+      "winner": "task-flag-b"
+    },
+    {
+      "key": "oncall.primary",
+      "losers": [
+        "task-oncall-a",
+        "task-oncall-b"
+      ],
+      "winner": "override-oncall"
+    },
+    {
+      "key": "release.freeze",
+      "losers": [
+        "task-freeze-a",
+        "task-freeze-b"
+      ],
+      "winner": "override-freeze"
+    }
+  ],
+  "order": [
+    "genesis",
+    "override-oncall",
+    "task-flag-a",
+    "task-flag-b",
+    "task-freeze-a",
+    "override-freeze",
+    "task-freeze-b",
+    "task-oncall-a",
+    "task-oncall-b",
+    "witness-1",
+    "witness-flag"
+  ],
+  "orphans": [],
+  "state": {
+    "deploy.last_seen": "green",
+    "feature.new_checkout": "canary",
+    "oncall.primary": "jonas",
+    "project": "harbor-ops",
+    "release.freeze": "none",
+    "status": "open"
+  }
+}

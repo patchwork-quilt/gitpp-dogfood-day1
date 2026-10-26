@@ -1,0 +1,1 @@
+{"id":"override-oncall-winter","kind":"override","parents":["override-oncall"],"effects":{"oncall.primary":"sanna"},"reason":"winter rota: sanna takes primary while jonas is on leave"}

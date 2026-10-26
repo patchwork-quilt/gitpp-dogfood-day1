@@ -3,6 +3,21 @@
 All notable changes to harbor-ops. The record set's own history is in
 [RESULTS.md](RESULTS.md); this file tracks the project around it.
 
+## 0.2.0 — 2026-10-26
+
+Day 2: two records land by pull request, in merge order, each merge's
+git.pp state Check verified against an independent local fold
+(state and winners, MATCH both times; full log in RESULTS.md).
+
+- PR #6: `task-season-winter` (task, parents [genesis]) sets
+  `schedule.season = winter`. The board now shows the winter
+  timetable (6 sailings).
+- PR #7: `override-oncall-winter` (override, parents
+  [override-oncall]) sets `oncall.primary = sanna` for the winter
+  rota; the previous winner is preserved as a loser.
+- `derived-state.json` regenerated over the 13 records; README
+  examples refreshed to the outputs the commands now print.
+
 ## 0.1.0 — 2026-10-26
 
 The project build: harbor-ops becomes a working repository instead of

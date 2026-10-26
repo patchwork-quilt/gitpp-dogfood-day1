@@ -133,3 +133,63 @@ from the implementation's known call shape.
   zero overlapping paths. The record-per-file layout keeps concurrent
   record work merge-trivial; the fold, not git, is where the claims
   collide.
+
+---
+
+## Day 2 — 2026-10-26: the project build, and two winter records
+
+*The day-1 log above is untouched; this addendum is appended in the
+same referee style — claims from the PRs, Checks read from the API,
+agreement judged against an independent local fold (this repo's
+`tools/fold.py`) of the merged record set.*
+
+**The project build (commit `5309507`, harbor-ops 0.1.0).** Between
+day 1 and the records below, the repo grew the project its records
+describe — the CLI, a 12-test suite, CI, and a derived-state snapshot
+generated from the 11 day-1 records — without changing any day-1
+record or a byte of the log above. The snapshot's fold equals the
+day-1 final state recorded above, and the tests workflow passed on
+the push (run `40394594457`, success).
+
+**The two records, in merge order:**
+
+| # | PR | Record added | Claim | Merge commit | Check | Conclusion |
+|---|---|---|---|---|---|---|
+| 1 | #6 | task-season-winter (task, parents [genesis]) | schedule.season = winter | c524c08 | 121824647658 | neutral |
+| 2 | #7 | override-oncall-winter (override, parents [override-oncall]) | oncall.primary = sanna | 779c836 | 121825082829 | neutral |
+
+Parenting, as argued in the PRs: the timetable record is the first
+setter of `schedule.season`, so it parents `genesis` — the day-1
+first-setter pattern. The on-call override parents the record it
+replaces, `override-oncall`, so the handover is decided by ancestry
+dominance inside the override class; a sibling override would have
+fallen through to the smallest-id tie-break, the wrong mechanism for
+an intentional handover.
+
+**Per-merge comparison (Check on merged main vs independent local fold):**
+
+| # | Counts (records · keys · conflicts · orphans) | State | Winners |
+|---|---|---|---|---|
+| 1 | 12 · 7 · 3 · 0 | MATCH | MATCH |
+| 2 | 13 · 7 · 3 · 0 | MATCH | MATCH |
+
+## Final state (13 records)
+
+- `deploy.last_seen` = green
+- `feature.new_checkout` = canary
+- `oncall.primary` = sanna
+- `project` = harbor-ops
+- `release.freeze` = none
+- `schedule.season` = winter
+- `status` = open
+
+The `oncall.primary` conflict now preserves three losers:
+`override-oncall` (jonas — the day-1 winner, superseded by its own
+descendant), `task-oncall-a` (priya), and `task-oncall-b` (mara).
+
+**Closing the loop.** This addendum ships with the regenerated
+snapshot (`tools/derive.py` over the 13 records, harbor-ops 0.2.0),
+so the program now reports what the records decided: `harbor-ops
+board` shows the winter timetable and `harbor-ops oncall` shows
+sanna. The snapshot-vs-fold consistency test in the suite guards the
+regeneration step from here on.

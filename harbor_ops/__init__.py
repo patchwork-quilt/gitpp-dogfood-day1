@@ -7,4 +7,4 @@ derived from the git.pp records under ``.gitpp/records/`` by the fold;
 reads. Regenerate it with ``python3 tools/derive.py``.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

@@ -11,10 +11,11 @@
     {
       "key": "oncall.primary",
       "losers": [
+        "override-oncall",
         "task-oncall-a",
         "task-oncall-b"
       ],
-      "winner": "override-oncall"
+      "winner": "override-oncall-winter"
     },
     {
       "key": "release.freeze",
@@ -28,6 +29,7 @@
   "order": [
     "genesis",
     "override-oncall",
+    "override-oncall-winter",
     "task-flag-a",
     "task-flag-b",
     "task-freeze-a",
@@ -35,6 +37,7 @@
     "task-freeze-b",
     "task-oncall-a",
     "task-oncall-b",
+    "task-season-winter",
     "witness-1",
     "witness-flag"
   ],
@@ -42,9 +45,10 @@
   "state": {
     "deploy.last_seen": "green",
     "feature.new_checkout": "canary",
-    "oncall.primary": "jonas",
+    "oncall.primary": "sanna",
     "project": "harbor-ops",
     "release.freeze": "none",
+    "schedule.season": "winter",
     "status": "open"
   }
 }

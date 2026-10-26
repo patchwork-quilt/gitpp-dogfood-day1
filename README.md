@@ -17,28 +17,29 @@ $ git clone https://github.com/patchwork-quilt/gitpp-dogfood-day1
 $ cd gitpp-dogfood-day1
 $ python3 -m harbor_ops status
 project: harbor-ops
-records: 11 (11 applied, 0 orphaned)
+records: 13 (13 applied, 0 orphaned)
 derived state:
   deploy.last_seen = green
   feature.new_checkout = canary
-  oncall.primary = jonas
+  oncall.primary = sanna
   project = harbor-ops
   release.freeze = none
+  schedule.season = winter
   status = open
 
 $ python3 -m harbor_ops freeze
 release.freeze: none - no release freeze in force (decided by override-freeze).
 
 $ python3 -m harbor_ops oncall
-oncall.primary: jonas (decided by override-oncall)
-preserved losing claims: task-oncall-a, task-oncall-b
+oncall.primary: sanna (decided by override-oncall-winter)
+preserved losing claims: override-oncall, task-oncall-a, task-oncall-b
 
 $ python3 -m harbor_ops board
-Sailing board - summer timetable
+Sailing board - winter timetable
 DEPARTS  ROUTE                        VESSEL
-06:30    Harbor -> North Cove         MV Kestrel
+07:00    Harbor -> North Cove         MV Kestrel
 ...
-10 sailings. Season from derived state (schedule.season = summer).
+6 sailings. Season from derived state (schedule.season = winter).
 ```
 
 Flip the canary locally — this writes only to a gitignored demo file
@@ -77,7 +78,7 @@ harbor-ops is two things, deliberately kept apart:
 
    ```console
    $ python3 tools/derive.py
-   folded 11 records -> harbor_ops/derived-state.json
+   folded 13 records -> harbor_ops/derived-state.json
      ...
    conflicts: 3, orphans: 0
    ```
@@ -88,8 +89,8 @@ harbor-ops is two things, deliberately kept apart:
 
 The timetable (`harbor_ops/data/timetable.json`) is ordinary project
 data — which *season's* sailings the board shows is not: that comes
-from the derived key `schedule.season` (defaulting to summer until a
-record says otherwise).
+from the derived key `schedule.season` (summer when no record sets
+it; a record set it to winter on day 2 — see RESULTS.md).
 
 ### Honest limits
 
